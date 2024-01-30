@@ -1,2 +1,2 @@
-# dados2
-estrutura de dados 2
+# Estrutura de dados 2
+repositorio dados2
