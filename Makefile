@@ -16,3 +16,4 @@ help:
 	@echo "-ola- compila e executa o programa ola"
 	@echo "-clear- limpa todos os binarios"
 	@echo "-all- clear + ola"
+#git lol para ver o grafico/commits
