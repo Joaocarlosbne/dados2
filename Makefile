@@ -18,3 +18,7 @@ help:
 	@echo "-all- clear + ola"
 #git lol para ver o grafico/commits
 #git rm -nome do arquivo- pra excluir um arquivo local e servidor
+LinkedList:
+	@echo "compilando listateste"
+	@gcc LinkedList.h LinkedList.c LinkedListTest.c -o LinkedList
+	@./LinkedList

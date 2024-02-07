@@ -10,3 +10,8 @@ void init(LinkedList *list) {
 bool isEmpty(LinkedList *list){
     return (list->size == 0);
 }
+
+int enqueue(LinkedList *list, void *data{
+    Node *newnode = (Node*)malloc(sizeof(Node));
+    if (*newnode = )
+}
