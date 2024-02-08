@@ -9,8 +9,9 @@ ola:
 	@./ola
 
 clear:
-	@echo "Limpando o ola binario"
+	@echo "Limpando os binarios"
 	@rm ola
+	@rm LinkedList
 
 help:
 	@echo "-ola- compila e executa o programa ola"
