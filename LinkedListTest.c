@@ -23,6 +23,8 @@ int main(){
     dequeue(&lista);
     printf("A lista está vazia? %d\n", isEmpty(&lista));
     printf("Primeiro elemento da lista: %d\n", *((int*)lista.first->data));
+    apagar(&lista);
+    printf("A lista está vazia? %d\n", isEmpty(&lista));
 
     return EXIT_SUCCESS;
 }

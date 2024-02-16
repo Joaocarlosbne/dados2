@@ -30,5 +30,5 @@ int add(LinkedList *list, int pos, void *data);
 int addAll(LinkedList *listDest, int pos, LinkedList *listSource);
 void* removePos(LinkedList *list, int pos);
 bool removeData(LinkedList *list, void *data, compare equal);
-
+void apagar(LinkedList *list);
 #endif
