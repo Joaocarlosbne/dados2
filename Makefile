@@ -10,9 +10,8 @@ ola:
 
 clear:
 	@echo "Limpando os binarios"
-	@rm ola
-	@rm LinkedList
-
+	@rm -f ola > /dev/null 2>&1
+	@rm -f LinkedList > /dev/null 2>&1
 help:
 	@echo "-ola- compila e executa o programa ola"
 	@echo "-clear- limpa todos os binarios"

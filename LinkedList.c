@@ -43,12 +43,35 @@ void* last(LinkedList *list) {
   return data;
 }
 
-void dequeue(LinkedList *list){
+void* dequeue(LinkedList *list){
   if (isEmpty(list)) return NULL;
   Node *trash = list->first;
   list->first = list->first->next;
-  void *data = trash->list;
+  void *data = trash->data;
   free(trash);
   list->size--;
   return data;
+}
+
+int push(LinkedList *list, void *data){
+  Node *newNode = (Node*) malloc(sizeof(Node));
+  if (newNode==NULL) return -1;
+  newNode->data = data;
+  newNode->next = NULL;
+  if (isEmpty(list))
+    list->first = newNode;
+  else {
+    newNode->next = list->first;
+    list->first = newNode;
+  }
+  list->size++;
+  return 1;
+}
+
+void* pop(LinkedList *list){
+  return dequeue(list);
+}
+
+void* top(LinkedList *list){
+  return first(list);
 }

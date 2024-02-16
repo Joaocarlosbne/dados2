@@ -5,6 +5,24 @@
 int main(){
     LinkedList lista;
     init(&lista);
-    printf("%d",isEmpty(&lista));
+    int *aux = (int *)malloc(sizeof(int));
+    *aux=1;
+    enqueue(&lista, aux);
+    aux = (int *)malloc(sizeof(int));
+    *aux=3;
+    enqueue(&lista, aux);
+    aux = (int *)malloc(sizeof(int));
+    *aux=4;
+    enqueue(&lista, aux);
+    aux = (int *)malloc(sizeof(int));
+    *aux=5;
+    push(&lista, aux);
+    aux = (int *)malloc(sizeof(int));
+    *aux=7;
+    enqueue(&lista, aux);
+    dequeue(&lista);
+    printf("A lista está vazia? %d\n", isEmpty(&lista));
+    printf("Primeiro elemento da lista: %d\n", *((int*)lista.first->data));
+
     return EXIT_SUCCESS;
 }
