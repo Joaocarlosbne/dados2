@@ -60,6 +60,7 @@ Node* head(Node *list) {
     *copy = *list;
     copy->next = NULL;
     return copy;
+    return list->atomList.list;
 }
 
 Node* tail(Node *list) {
@@ -82,5 +83,18 @@ bool search(Node *list, int atom) {
         }
     } else {
         return search(list->atomList.list, atom) || search(list->next, atom);
+    }
+}
+
+int depth(Node *list) {
+    if (list == NULL) {
+        return 0;
+    }
+    if (list->type == 0) {
+        return 1 + depth(list->next);
+    } else {
+        int depthList = depth(list->atomList.list);
+        int depthNext = depth(list->next);
+        return depthList > depthNext ? 1 + depthList : 1 + depthNext;
     }
 }
