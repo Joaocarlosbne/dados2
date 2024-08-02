@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "Hash.h"
+#include "hash.h"
 
 void initHash(HashStruct *hashStruct) {
     for (int i = 0; i < MAX; i++) {
@@ -17,9 +17,9 @@ bool isHashEmpty(HashStruct *hashStruct) {
 int hash(char *key) {
     int sum = 0;
     for (int i = 0; key[i] != 0; i++) {
-        sum += key[i] * (i + 1);
+        sum += key[i];  // Somar diretamente o valor ASCII do caractere
     }
-    return sum % MAX;
+    return sum % MAX;  // Aplicar módulo para manter dentro do tamanho da tabela hash
 }
 
 int put(HashStruct *hashStruct, char *key, void *data, compare equal) {
@@ -39,9 +39,9 @@ bool containsKey(HashStruct *hashStruct, char *key, compare equal) {
 
 void* get(HashStruct *hashStruct, char *key, compare equal) {
     int hashValue = hash(key);
-    Node *aux = hashStruct->hashes[hashValue].first->next;
+    Node *aux = hashStruct->hashes[hashValue].first->Next;
     while (aux != hashStruct->hashes[hashValue].first && !equal(aux->data, key))
-        aux = aux->next;
+        aux = aux->Next;
     return aux->data;
 }
 
