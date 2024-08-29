@@ -56,3 +56,6 @@ Para compilar o programa, use o seguinte comando:
 gcc main.c hash.c DoublyLinkedList.c -o hash_program
 
 Para executar use hash_program.exe
+
+-----------------------------------------------------------------------------------------------
+
